@@ -1,0 +1,30 @@
+<html>
+<head>
+	<script src="/angular"></script>
+    <script src="/angular-ui-router"></script>
+    <script src="/js/mainModule.js"></script>
+    <script src="/js/peopleService.js"></script>
+    <script src="/js/components.js"></script>
+    <script src="/js/states.js"></script>
+
+    <style>.active { color: red; font-weight: bolder; }
+    </style>
+<body ng-app ='main'>
+
+
+<h2> helllo </h2>
+	<a ui-sref="hello" ui-sref-active="active">Hello</a>
+  	<a ui-sref="about" ui-sref-active="active">About</a>
+
+  	<a ui-sref="helloWithComponent" ui-sref-active="active">Hello with component</a>
+  	<a ui-sref="people" ui-sref-active="active">People</a>
+
+<ui-view></ui-view>
+
+</body>
+
+
+
+
+
+</html>
