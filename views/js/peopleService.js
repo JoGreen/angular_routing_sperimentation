@@ -1,5 +1,6 @@
 app.service('PeopleService', function($http){
 	let url = '/getAllPeople';
+	let parentsUrl = '/getParents'
 	let people = [];
 	return {
 		getAllPeople: function(){
@@ -17,6 +18,13 @@ app.service('PeopleService', function($http){
 					return people[i];
 				}
 			}
+		},
+
+		getParents: function(person){
+			console.log('person name = '+ person.name);
+			return $http({method:'GET', url:parentsUrl, params: {person:person}}).then(function(res){			 
+				return res.data;			
+			});
 		}
 	}
 	

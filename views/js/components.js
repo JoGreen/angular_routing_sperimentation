@@ -22,6 +22,47 @@ app.component('person', {
 });
 
 app.component('children', {
-    bindings: {children : '<'},
-    templateUrl: 'template/children.html'
+    bindings: {children : '<', grandparents: '<', parent: '<'},
+    templateUrl: 'template/children.html', 
+    controller: function(){
+        let color = d3.scale.category20()
+        this.options = {
+            chart: {
+                type: "forceDirectedGraph",
+                height: 450,
+                width: 644,
+                margin: {top: 20,right: 20,bottom: 20,left: 20},
+                color: function(d){
+                    return color(d.group)
+                },
+                nodeExtras: function(node) {
+                    node && node
+                      .append("text")
+                      .attr("dx", 8)
+                      .attr("dy", ".35em")
+                      .text(function(d) { return d.name })
+                      .style('font-size', '10px');
+                }
+
+            }
+        }
+
+
+        this.data = {
+            'nodes': [
+                {'name':'nonno', 'group': 1},
+                {'name':'nonna', 'group': 1},
+                {'name':'papà', 'group': 2},
+                {'name':'mamma', 'group': 2},
+                {'name':'figlio', 'group': 3},
+                {'name':'figlia', 'group': 3}
+            ],
+            'links':[
+                {"source":1,"target":0,"value":1},
+                {"source":2,"target":0,"value":8},
+                {"source":3,"target":0,"value":10},
+                {"source":3,"target":2,"value":6},
+            ]
+        };
+    }
 });

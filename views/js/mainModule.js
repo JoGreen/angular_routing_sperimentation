@@ -1,4 +1,4 @@
-var app = angular.module('main', ['ui.router']);
+var app = angular.module('main', ['ui.router', 'nvd3']);
 
 
 //**************************

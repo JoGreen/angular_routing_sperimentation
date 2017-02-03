@@ -4,3 +4,18 @@
 		<a > {{child}} </a>
 	</li>
 </ul>
+
+
+<h2> PARENTS & GRANDPARENTS </h2>
+<div class = 'parents'>parent: {{$ctrl.parent.name}} </div>
+<div class= 'grandparents'>
+	<p ng-repeat = 'grandparent in $ctrl.grandparents'>{{grandparent.name}}</p>
+</div>
+
+
+<nvd3 options="$ctrl.options" data="$ctrl.data" class="with-3d-shadow with-transitions"></nvd3>
+
+
+
+
+<button ui-sref='person'>close</button>

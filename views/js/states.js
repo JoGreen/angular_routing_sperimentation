@@ -1,4 +1,4 @@
-app.config(function($stateProvider){
+angular.module('main').config(function($stateProvider){
 	
 	var helloState = {
 		name: 'hello',
@@ -46,9 +46,17 @@ app.config(function($stateProvider){
 		url: '/children',
 		component: 'children',
 		resolve: {
+
 			children: function(person){
 				console.log(person);
 				return person.children;
+			},
+
+			grandparents: function(PeopleService, person){
+				return PeopleService.getParents(person);
+			},
+			parent: function(person){
+				return person;
 			}
 		}
 	};

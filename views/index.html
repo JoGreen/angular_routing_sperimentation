@@ -1,7 +1,17 @@
 <html>
 <head>
-	<script src="/angular"></script>
-    <script src="/angular-ui-router"></script>
+<!-- IMORTANT FOR ANGULAR-NVD3 -->
+
+    <meta charset="utf-8">
+    <script src="/dependencies/angular/angular.js"></script>
+    <script src="/dependencies/d3/d3.js"></script>
+    <script src="/dependencies/nvd3/build/nv.d3.js"></script> 
+    <script src="/dependencies/angular-nvd3/dist/angular-nvd3.js"></script>
+    <link rel="stylesheet" href="/dependencies/nvd3/build/nv.d3.css">
+
+<!-- *********************************************-->
+<!--    <script src="/angular"></script>  -->
+    <script src="dependencies/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="/js/mainModule.js"></script>
     <script src="/js/peopleService.js"></script>
     <script src="/js/components.js"></script>
@@ -12,12 +22,12 @@
 <body ng-app ='main'>
 
 
-<h2> helllo </h2>
+<h2> hello </h2>
 	<a ui-sref="hello" ui-sref-active="active">Hello</a>
-  	<a ui-sref="about" ui-sref-active="active">About</a>
+	<a ui-sref="about" ui-sref-active="active">About</a>
 
-  	<a ui-sref="helloWithComponent" ui-sref-active="active">Hello with component</a>
-  	<a ui-sref="people" ui-sref-active="active">People</a>
+	<a ui-sref="helloWithComponent" ui-sref-active="active">Hello with component</a>
+	<a ui-sref="people" ui-sref-active="active">People</a>
 
 <ui-view></ui-view>
 
